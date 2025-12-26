@@ -365,6 +365,11 @@
                   </div>
                   <h3 className="text-3xl font-black font-orbitron uppercase text-[#00f3ff]">${selected.name}</h3>
                   <p className="text-xs font-mono text-white/50 mt-4 leading-relaxed">${selected.bio}</p>
+                  <div className="flex gap-4 mt-6">
+                    ${Object.entries(selected.socials || {}).map(([k, v]) => v && html`
+                      <a key=${k} href=${v} target="_blank" className="p-2 bg-white/5 border border-white/10"><img src=${SOCIAL_ICONS[k]} className="w-4 h-4 invert" /></a>
+                    `)}
+                  </div>
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-6 border-b border-white/10 pb-2">
